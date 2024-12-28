@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/icons/icon-location.svg" type="image/svg+xml" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="./src/output.css" rel="stylesheet">
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Include Leaflet.Grayscale JS -->
+  <script src="./src/leaflet-grayscale.js"></script>
+
+  <title>Kyrgyz mortgage</title>
+</head>
+<body>
+  <header>
+    <div class="text-lg font-bold">Мониторинг социального обеспечения и миграции</div>
+    <nav>
+      <a href="#">Уй-було комок</a>
+      <a href="#">Социальный договор</a>
+      <a href="#">Социальные льготы</a>
+      <a href="#" class="flex items-center">
+        <span></span>
+        <img src="./assets/icons/icon.png" alt="User icon" class="icon">
+      </a>
+    </nav>
+  </header>
+  
+  <main>
+    <section>
+      <div class="wrapper relative">
+        <div class="absolute top-0 left-0 z-10 text-white text-xl tracking-[.15em]"></div>
+      </div>
+      <div id="map" class="h-[30rem] z-0">
+      </div>
+    </section>
+
+    <div class="toggle-container">
+      <label class="toggle">
+        Виджеты
+        <input type="checkbox" id="widgetToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <section id="widgets" class="widgets hidden">
+      <div class="widget bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
+        <h3 class="text-lg font-bold text-white mb-2">Средний доход на человека по регионам</h3>
+        <div class="flex gap-2 justify-around text-yellow-400">
+          <div>
+            <div class="text-center text-white">Чуй</div>
+            <div>2.3 млн</div>
+          </div>
+          <div>
+            <div class="text-center text-white">Нарын</div>
+            <div>1.3 млн</div>
+          </div>
+          <div>
+            <div class="text-center text-white">Ош</div>
+            <div>1.6 млн</div>
+          </div>
+          <div>
+            <div class="text-center text-white">Жалал Абад</div>
+            <div>3 млн</div>
+          </div>
+          <div>
+            <div class="text-center text-white">Баткен</div>
+            <div>2.4 млн</div>
+          </div>
+          <div>
+            <div class="text-center text-white">Ысык Куль</div>
+            <div>1.2 млн</div>
+          </div>
+          <div>
+            <div class="text-center text-white">Талас</div>
+            <div>1.7 млн</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="widget bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
+        <h3 class="text-lg font-bold text-white mb-2">Распределение получателей по полу</h3>
+        <canvas id="genderChart" width="400" height="400"></canvas>
+      </div>
+    
+      <div class="widget bg-gray-800 p-4 rounded-lg shadow-lg">
+        <h3 class="text-lg font-bold text-white mb-2">Фаза перехода УБК - Социальный контракт</h3>
+        <ul class="text-white">
+          <li>Сапаров Токто Мусаевич - 2 месяца</li>
+          <li>Сапаров Токто Мусаевич - 2 месяца</li>
+          <li>Сапаров Токто Мусаевич - 2 месяца</li>
+          <li>Сапаров Токто Мусаевич - 2 месяца</li>
+        </ul>
+      </div>
+    </section>
+    
+  <script src="./src/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </main>
+  </body>
+</html>
